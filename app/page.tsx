@@ -55,36 +55,62 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Project Card 1 */}
-          <Card className="overflow-hidden border-border/50 shadow-sm">
-            <div className="relative w-full h-48 bg-muted">
-              <Image src="/HMS.png" alt="hms" width={350} height={350} className="object-cover" />
-            </div>
-            <CardHeader> <CardTitle>Hospital Management System</CardTitle> </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">A real world system made for Hospitals or Clinics.</p>
-              <Link href="/projects/hms"> <Button size="sm"> About Project </Button> </Link>
-            </CardContent>
-          </Card>
-
-          {/* Project Card 2 */}
-          <Card className="overflow-hidden border-border/50 shadow-sm">
-            <div className="relative w-full h-48 bg-muted">
-              <Image src="/prolog.png" alt="Prolog" height={400} width={400} className="object-cover" />
+              <Link href="/projects/hms" className="no-underline">
+          <Card className="overflow-hidden border-border/50 h-90 shadow-sm">
+            <div className="relative w-full h-48 bg-muted overflow-hidden">
+              <Image
+                src="/HMS.png"
+                alt="hms"
+                width={350}
+                height={350}
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
             </div>
             <CardHeader>
-              <CardTitle>Prolog</CardTitle>
+              {" "}
+              <CardTitle>Hospital Management System</CardTitle>{" "}
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">Prolog is a final year projects archiving system.</p>
-              <Link href="/projects/prolog"> <Button size="sm"> About Project </Button>
-              </Link>
+              <p className="text-sm text-muted-foreground mb-4">
+                A real world system made for Hospitals or Clinics.
+              </p>
+                {" "}
+                <Button size="sm"> About Project </Button>{" "}
             </CardContent>
           </Card>
+              </Link>
+
+          {/* Project Card 2 */}
+          <Link href="/projects/prolog" className="no-underline">
+            <Card className="overflow-hidden border-border/50 h-90 shadow-sm">
+              <div className="relative w-full h-48 bg-muted">
+                <Image
+                  src="/prolog.png"
+                  alt="Prolog"
+                  height={400}
+                  width={400}
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Prolog</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Prolog is a final year projects archiving system.
+                </p>
+                <Button size="sm"> About Project </Button>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
 
         {/* Mobile View All Button */}
         <Link href="/projects" className="md:hidden block w-full">
-          <Button variant="outline" className=""> View All Projects →</Button>
+          <Button variant="outline" className="">
+            {" "}
+            View All Projects →
+          </Button>
         </Link>
       </section>
 
@@ -96,22 +122,30 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card>
             <CardHeader className="pb-2">
-              <div className="mb-2"> <Badge>Tech</Badge></div>
+              <div className="mb-2">
+                {" "}
+                <Badge>Tech</Badge>
+              </div>
               <CardTitle>My Portfolio with Next.js</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">A practical guide to make Portfolios with @next/mdx
+              <p className="text-sm text-muted-foreground mb-4">
+                A practical guide to make Portfolios with @next/mdx
               </p>
-              <Link href="/blogs/tech/my-portfolio" className="text-primary hover:underline text-sm font-medium"> Read Post →
+              <Link
+                href="/blogs/tech/my-portfolio"
+                className="text-primary hover:underline text-sm font-medium"
+              >
+                {" "}
+                Read Post →
               </Link>
             </CardContent>
           </Card>
-
-
         </div>
 
         <Link href="/blogs" className="inline-block">
-          <Button variant="outline" className="group">Read More Writings
+          <Button variant="outline" className="group">
+            Read More Writings
             <IconArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </Link>
@@ -121,9 +155,15 @@ export default function HomePage() {
 
       {/* 5. QUICK CONTACT CTA */}
       <section className="bg-muted/50 rounded-3xl p-6 md:p-12 space-y-4 md:space-y-6 border flex flex-col items-center justify-center text-center">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Ready to build something?</h2>
-        <p className="text-base md:text-lg text-muted-foreground text-center max-w-xl mx-auto">I'm currently open to new opportunities and collaborations.</p>
-        <Link href="/contact" className="inline-block pt-2"><Button size="lg">Send a Message</Button></Link>
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+          Ready to build something?
+        </h2>
+        <p className="text-base md:text-lg text-muted-foreground text-center max-w-xl mx-auto">
+          I'm currently open to new opportunities and collaborations.
+        </p>
+        <Link href="/contact" className="inline-block pt-2">
+          <Button size="lg">Send a Message</Button>
+        </Link>
       </section>
     </main>
   );
