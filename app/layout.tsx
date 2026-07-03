@@ -50,7 +50,7 @@ export default function RootLayout({
         >
 
         <Navbar />
-        <article className="prose dark:prose-invert lg:prose-xl mx-auto p-8 mt-20 text-justify">
+        <article className="prose dark:prose-invert lg:prose-xl mx-auto p-8 mt-10">
           {children}
           <Footer />
         </article>

@@ -23,7 +23,7 @@ export default function HomePage() {
           <div className="flex flex-col ">
             <p className="text-zinc-500 text-lg font-medium">Hello, I'm</p>
 
-            <h1 className="text-4xl md:text-7xl group flex font-extrabold uppercase tracking-wider">
+            <h1 className="text-4xl lg:text-5xl md:text-4xl group flex font-extrabold uppercase tracking-wider">
               <span className="text-zinc-400">ABDUL</span>{" "}
               <span className="text-primary"> MUEED</span>
             </h1>
@@ -62,7 +62,7 @@ export default function HomePage() {
             <CardHeader> <CardTitle>Hospital Management System</CardTitle> </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">A real world system made for Hospitals or Clinics.</p>
-              <Link href="/projects/hms"> <Button variant="secondary" size="sm"> About Project </Button> </Link>
+              <Link href="/projects/hms"> <Button size="sm"> About Project </Button> </Link>
             </CardContent>
           </Card>
 
@@ -76,7 +76,7 @@ export default function HomePage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">Prolog is a final year projects archiving system.</p>
-              <Link href="/projects/prolog"> <Button variant="secondary" size="sm"> About Project </Button>
+              <Link href="/projects/prolog"> <Button size="sm"> About Project </Button>
               </Link>
             </CardContent>
           </Card>
@@ -84,7 +84,7 @@ export default function HomePage() {
 
         {/* Mobile View All Button */}
         <Link href="/projects" className="md:hidden block w-full">
-          <Button variant="outline" className="w-full"> View All Projects</Button>
+          <Button variant="outline" className=""> View All Projects →</Button>
         </Link>
       </section>
 
@@ -122,7 +122,7 @@ export default function HomePage() {
       {/* 5. QUICK CONTACT CTA */}
       <section className="bg-muted/50 rounded-3xl p-6 md:p-12 space-y-4 md:space-y-6 border flex flex-col items-center justify-center text-center">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Ready to build something?</h2>
-        <p className="text-base md:text-lg text-muted-foreground text-justify max-w-xl mx-auto">I'm currently open to new opportunities and collaborations.</p>
+        <p className="text-base md:text-lg text-muted-foreground text-center max-w-xl mx-auto">I'm currently open to new opportunities and collaborations.</p>
         <Link href="/contact" className="inline-block pt-2"><Button size="lg">Send a Message</Button></Link>
       </section>
     </main>

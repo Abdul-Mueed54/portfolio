@@ -39,7 +39,7 @@ const navItems = [
 
 export function Navbar() {
   return (
-    <div className="fixed top-6 left-0 w-full z-50 pointer-events-none px-4 md:px-8 flex items-center justify-between">
+    <div className="fixed top-6 left-0 w-full z-50 pointer-events-none gap-8 px-4 md:px-8 flex items-center justify-between">
       <div className="pointer-events-auto hidden sm:block">
         <Link href="/">
           <Image
