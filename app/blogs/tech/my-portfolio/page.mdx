@@ -1,0 +1,96 @@
+
+### Building your Portfolio with Next.js and MDX
+
+<span className="">
+ When building a portfolio, the goal is to create a space that is fast, scalable, and entirely under your control. While spinning up a full database is great for complex web applications, it is often unnecessary overhead for a personal blog or project showcase.
+
+This is where **MDX** comes in. MDX allows you to write standard Markdown while seamlessly embedding interactive React components right inside your text. Here is a complete guide on how to build a database-free, highly performant portfolio using the Next.js App Router and `@next/mdx`.
+</span>
+
+### Why Choose MDX Over a CMS?
+
+Before diving into the code, it is worth understanding why this architecture is so powerful for developers:
+
+1. **Zero Database Latency:** Because your content lives in your repository as local files, Next.js can render them almost instantly. There are no API calls or database queries slowing down your page loads.
+2. **Version Control:** Your blog posts and case studies are tracked in Git right alongside your application code.
+3. **Custom React Components:** You are not limited to plain text. Need to showcase an interactive chart, a custom code block, or a live demo? You can drop the React component directly into your `.mdx` file.
+
+---
+
+### Step 1: Install the Dependencies
+
+To get Next.js to understand `.mdx` files natively, you need to install the official Next.js MDX packages. We will also install the Tailwind Typography plugin, which automatically styles raw markdown so you don't have to write CSS for every paragraph and heading.
+
+```bash
+npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
+npm install -D @tailwindcss/typography
+```
+
+### Step 2: Configure Next.js
+Next, update your next.config.ts or next.config.mjs file at the root of your project. This tells the Next.js compiler to treat .mdx files as valid page routes.
+
+```JavaScript
+import createMDX from '@next/mdx'
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+}
+
+const withMDX = createMDX({
+  // You can add remark and rehype plugins here later
+})
+
+export default withMDX(nextConfig)
+```
+
+### Step 3: Set Up Tailwind Typography
+To make your Markdown look polished instantly, add the typography plugin to your CSS configuration. If you are using Tailwind v4, simply add this to your app/globals.css:
+
+```CSS
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+```
+
+### Step 4: Create a Styling Wrapper
+By default, raw HTML generated from Markdown will span the entire width of the screen and look unstyled. To fix this, create a layout file specifically for your MDX routes.
+
+By wrapping your content in Tailwind's prose class, it automatically applies beautiful, reading-optimized typography.
+
+```TypeScript
+// app/blogs/layout.tsx
+export default function MdxLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <article className="prose dark:prose-invert lg:prose-xl mx-auto py-12 px-6 text-justify">
+      {children}
+    </article>
+  )
+}
+```
+
+### Step 5: Create a Styling Wrapper
+Create mdx-components.tsx file at the root of your project. The real magic of mdx-components.tsx is that it acts as a global translation dictionary for your Markdown.
+```TypeScript
+import type { MDXComponents } from 'mdx/types'
+
+export function useMDXComponents(components: MDXComponents): MDXComponents {
+  return {
+    ...components,
+  }
+}
+```
+
+### Step 6: Write Your First Post
+With the infrastructure in place, Next.js will now treat any page.mdx file exactly like a page.tsx file.
+
+To publish a new piece of content, just create a new folder corresponding to the URL path you want, and drop an MDX file inside it. For example, creating app/blogs/my-first-post/page.mdx instantly creates the live route localhost:3000/blogs/my-first-post.
+
+#### Code snippet
+```
+# Hello World
+
+This is my first post written entirely in MDX. No database required!
+```
+
+The Final Verdict
+By combining Next.js, Tailwind CSS, and MDX, you remove the friction between having an idea and publishing it. You get the simplicity of Markdown, the power of React, and the performance of static files—the perfect combination for any developer's personal corner of the internet.
