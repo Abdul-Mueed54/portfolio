@@ -23,11 +23,11 @@ export default function AboutPage() {
         {/* Right Side: The Introduction */}
         <div className="w-full md:w-2/3 space-y-6">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight mb-2">About Me</h1>
-            <h2 className="text-4xl md:text-7xl group flex font-bold uppercase tracking-wider">
+            <h1 className="text-5xl lg:text-5xl md:text-5xl font-bold tracking-tight mb-2">About Me</h1>
+            <h1 className="text-3xl lg:text-4xl md:text-3xl group flex font-extrabold uppercase tracking-wider">
               <span className="text-zinc-400">ABDUL</span>{" "}
               <span className="text-primary"> MUEED</span>
-            </h2>
+            </h1>
           </div>
 
           <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
