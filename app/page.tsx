@@ -4,21 +4,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { IconArrowRight } from "@tabler/icons-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export default function HomePage() {
   return (
-    <main className="max-w-5xl mx-auto px-2 pt-16 pb-16 space-y-32">
+    <main className="max-w-102xl mx-auto p-8 pt-16 ">
       {/* 2. ABOUT SNIPPET */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-5 justify-center items-center">
-        <div className="flex justify-center">
-          <Image
-            src="/profile.jpeg"
-            alt="Abdul Mueed"
-            width={200}
-            height={200}
-            className="rounded-3xl border shadow-xl object-cover"
-          />
-        </div>
+      <AspectRatio ratio={1 / 1} className="relative overflow-hidden w-full max-w-sm rounded-lg ">
+      <Image
+        src="/profile1.jpeg"
+        alt="Photo"
+        fill
+        className="sclae-[1.01] object-cover rounded-lg object-top"
+      />
+    </AspectRatio>
         <div className="">
           <div className="flex flex-col ">
             <p className="text-zinc-500 text-lg font-medium">Hello, I'm</p>
@@ -45,45 +45,38 @@ export default function HomePage() {
       <section className="space-y-8">
         <div className="flex items-end justify-between">
           <h2 className="text-3xl font-bold tracking-tight">Recent Work</h2>
-          <Link
-            href="/projects"
-            className="hidden md:flex text-primary hover:underline items-center text-sm font-medium"
-          >
-            View All Projects <IconArrowRight className="ml-1 w-4 h-4" />
-          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Project Card 1 */}
-              <Link href="/projects/hms" className="no-underline">
-          <Card className="overflow-hidden border-border/50 h-90 shadow-sm">
-            <div className="relative w-full h-48 bg-muted overflow-hidden">
-              <Image
-                src="/HMS.png"
-                alt="hms"
-                width={350}
-                height={350}
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <CardHeader>
-              {" "}
-              <CardTitle>Hospital Management System</CardTitle>{" "}
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                A real world system made for Hospitals or Clinics.
-              </p>
+          <Link href="/projects/hms" className="no-underline">
+            <Card className="overflow-hidden border-border/50 h-90 shadow-sm">
+              <div className="relative w-full h-48 overflow-hidden">
+                <Image
+                  src="/HMS.png"
+                  alt="hms"
+                  width={350}
+                  height={350}
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <CardHeader>
                 {" "}
+                <CardTitle>Hospital Management System</CardTitle>{" "}
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  A real world system made for Hospitals or Clinics.
+                </p>{" "}
                 <Button size="sm"> About Project </Button>{" "}
-            </CardContent>
-          </Card>
-              </Link>
+              </CardContent>
+            </Card>
+          </Link>
 
           {/* Project Card 2 */}
           <Link href="/projects/prolog" className="no-underline">
             <Card className="overflow-hidden border-border/50 h-90 shadow-sm">
-              <div className="relative w-full h-48 bg-muted">
+              <div className="relative w-full h-48 overflow-hidden">
                 <Image
                   src="/prolog.png"
                   alt="Prolog"
@@ -104,12 +97,9 @@ export default function HomePage() {
             </Card>
           </Link>
         </div>
-
-        {/* Mobile View All Button */}
-        <Link href="/projects" className="md:hidden block w-full">
-          <Button variant="outline" className="">
-            {" "}
-            View All Projects →
+        <Link href="/projects" className="inline-block">
+          <Button variant="outline" className="group"> View All Projects
+            <IconArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </Link>
       </section>

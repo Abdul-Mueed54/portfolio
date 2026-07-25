@@ -1,1 +1,57 @@
-### Prolog - Project Archiving System
+<div className="text-justify prose-sm">
+<div className="rounded-lg">
+![ProLog Home Page Screenshot](/prolog.png)
+</div>
+## ProLog — The Project Cataloging System
+
+**Abdul Mueed** / Jul 25, 2026
+
+ProLog is a robust full-stack project cataloging and archiving system developed specifically for the Final Year Projects. It transitions the manual, physical storage of Final Year Design Projects (FYDPs) into a centralized, highly scalable web application.
+
+### Live Deployment
+
+ProLog is currently deployed and actively utilized by the **Department of Textile Engineering** at **NED University of Engineering & Technology (NEDUET)**. Hosted on their local network servers, the system successfully streamlines their internal FYDP archiving and is, for the time being, accessible exclusively to the administration and faculty.
+
+The platform is built using a modern decoupled architecture, featuring an Express.js backend powered by highly optimized pure SQL queries and a dynamic Next.js frontend.
+
+### Backend Highlights
+
+* **Tech Stack:** Developed with Node.js, Express.js, and TypeScript.
+* **Pure SQL Optimization:** The data access layer utilizes pure raw SQL queries without an ORM, allowing for maximum control and query performance optimization.
+* **Stateless Security:** Completely stateless architecture using JSON Web Tokens (JWT) for session management and bcrypt for secure password hashing.
+* **Advanced Database Schema:** Custom PostgreSQL schema implementation featuring `JSONB` for comprehensive audit logging, disjoint constraints, and complex `JOIN`s for paginated searches.
+
+### Frontend Features
+
+* **Modern UI:** Built with Next.js and styled using Shadcn UI to provide a clean, user interface.
+* **State Management:** Efficient client-side state management handled via Zustand.
+* **Dynamic Access:** Strict Role-Based Access Control (RBAC) is seamlessly integrated into the UI, dynamically adapting dashboards and forms for Guests, Faculty, Staff, and Admins.
+* **Live Analytics:** A real-time analytics dashboard utilizing complex aggregation queries to deliver instant system metrics and catalog statistics.
+
+### Main Modules
+
+1. **Authentication and RBAC:** A secure login portal with four distinct user tiers, enforcing strict boundaries on data insertion, modification, and viewing.
+2. **Project Catalog:** A highly optimized, paginated search engine to discover projects. It filters by title, domains, and department using backend `ILIKE` queries.
+3. **Resource Management:** Secure handling of digital assets, linking PDF reports, source code archives, and external grants directly to specific projects.
+4. **Administration and Audit:** Complete administrative oversight tools to manage users, university departments, and industry partners, while tracking state changes through automated logs.
+
+### Technologies and Skills
+
+* **Core Stack:** Node.js, Express.js, Next.js, PostgreSQL, TypeScript, JavaScript
+* **Database & Design:** Pure SQL, Database Architecture, ER Modeling
+* **Frontend:** Shadcn UI, Zustand
+* **System Concepts:** Role-Based Access Control, Stateless Authentication, REST APIs, Complex Aggregation
+
+---
+
+### Team & Resources
+
+**Other Contributors:**
+* [Rayyan Ahmed](https://www.ukashaanwerali.dev/)
+* [Ukasha](https://github.com/Dev-Rayyan-Ahmed)
+
+**GitHub Repos:**
+* [Frontend](https://https://github.com/3-Bit-Bros/ProLog-Frontend)
+* [Backend](https://https://github.com/3-Bit-Bros/ProLog-Backend)
+
+</div>
