@@ -1,1 +1,48 @@
-### Portfolio
+<div className="text-justify prose-sm">
+<div className="rounded-lg">
+![Portfolio Home Page Screenshot](/portfolio.png)
+</div>
+## Personal Portfolio — Built with Next.js & MDX
+
+
+My personal portfolio is a fast, highly scalable, and entirely self-hosted web space designed to showcase projects and publish technical blogs. Built using the Next.js App Router and `@next/mdx`, it operates entirely without a traditional database, eliminating API overhead and ensuring maximum performance.
+
+By treating `.mdx` files as native page routes, the architecture seamlessly blends the simplicity of Markdown with the dynamic power of interactive React components.
+
+### Architecture Highlights
+
+* **Zero Database Latency:** Content lives directly in the repository as local files, allowing Next.js to render pages almost instantly without relying on external API calls or database queries.
+* **Native MDX Integration:** Utilizes official Next.js MDX packages (`@next/mdx`, `@mdx-js/loader`, `@mdx-js/react`) to process Markdown and React simultaneously.
+* **Version-Controlled Content:** All blog posts, project showcases, and case studies are tracked in Git right alongside the application source code.
+* **Reading-Optimized Styling:** Integrated with the Tailwind Typography plugin (`@tailwindcss/typography`) to automatically apply polished, responsive styling to raw Markdown elements via the `prose` class.
+
+### Frontend Features
+
+* **Custom MDX Components:** A global `mdx-components.tsx` translation dictionary allows standard markdown tags to be replaced or enhanced with custom React components, enabling interactive UI elements and code blocks directly inside articles.
+* **Responsive Layout:** A dedicated layout wrapper ensures that all generated HTML content stays perfectly aligned and reading-optimized across both desktop and mobile devices.
+* **Dark Mode Support:** Seamlessly integrated with Tailwind's `dark:prose-invert` classes to ensure the reading experience is comfortable in any color scheme.
+
+### Main Modules
+
+1. **Project Showcase:** A dedicated catalog displaying full-stack projects, detailed architectural breakdowns, and deployment highlights.
+2. **Technical Blog:** A dynamic, file-based routing system where simply dropping an `.mdx` file into a directory instantly generates a live, fully styled blog post route.
+3. **Interactive Demos:** Embedded React components within articles that break the boundaries of static text, allowing for a richer user experience.
+
+### Technologies and Skills
+
+* **Core Stack:** Next.js (App Router), React.js, TypeScript
+* **Content Management:** MDX, Markdown
+* **Styling & UI:** Tailwind CSS, Tailwind Typography plugin
+* **Concepts:** Static Site Generation, Database-Free Architecture, File-Based Routing
+
+---
+
+### Resources & Links
+
+**Live Site:**
+* [Visit Portfolio](https://abdulmueed-portfolio.vercel.app)
+
+**GitHub Repo:**
+* [Source Code](https://github.com/Abdul-Mueed54/portfolio)
+
+</div>
