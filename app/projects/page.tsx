@@ -5,16 +5,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 // Hardcoded MVP data array
 const myProjects = [
   {
-    title: "Hospital Management System",
-    slug: "hms",
-    image: "/HMS.png",
-    description: "A real world system made for Hospitals or Clinics."
-  },
-  {
     title: "Prolog",
     slug: "prolog",
     image: "/prolog.png",
     description: "Prolog is a final year projects archiving system."
+  },
+  {
+    title: "CIS Community Web",
+    slug: "cis-community-web",
+    image: "/cis-community-web.png",
+    description: "The official website of CIS Community, NEDUET."
+  },
+  {
+    title: "Hospital Management System",
+    slug: "hms",
+    image: "/HMS.png",
+    description: "A real world system made for Hospitals or Clinics."
   },
   {
     title: "Carento",

@@ -1,0 +1,50 @@
+<div className="text-justify prose-sm">
+<div className="rounded-lg">
+![Community Portal Home Page Screenshot](/cis-community-web.png)
+</div>
+## Departmental Community Website
+
+
+The Departmental Community Website is a dynamic, content-driven platform built to connect students, faculty, and alumni. It serves as a centralized hub for community news, upcoming events, and shared resources, replacing fragmented communication channels with a single, easily manageable web experience.
+
+The platform utilizes a modern headless CMS architecture, leveraging the power of Payload CMS alongside a highly scalable serverless database and edge-based media delivery.
+
+### Backend & CMS Highlights
+
+* **Headless Architecture:** Powered by Payload CMS to provide a deeply customizable, developer-friendly admin dashboard for managing all site content.
+* **Serverless Database:** Integrated with PostgreSQL via Neon DB, ensuring highly available, scalable, and responsive data querying without the overhead of traditional database management.
+* **Edge Media Storage:** All media assets (images, documents, gallery photos) are securely managed and served via Cloudflare R2, providing an extremely fast, and S3-compatible storage solution.
+* **TypeScript Native:** Both the backend CMS configuration and the frontend consume the exact same TypeScript types, ensuring type safety from the database level all the way to the UI.
+
+### Frontend Features
+
+* **Modern Web Framework:** Built with Next.js to securely consume Payload's REST APIs, rendering content dynamically while maintaining excellent SEO and performance.
+* **Rich Text Rendering:** Capable of rendering complex, deeply nested rich text content directly from the CMS for announcements.
+* **Responsive UI:** Clean, accessible styling built with Tailwind CSS to ensure the platform looks perfect on mobile devices, tablets, and desktop monitors.
+* **Dynamic Media Loading:** Optimized image delivery utilizing Next.js Image components paired with Cloudflare R2 URLs for fast loading times.
+
+### Main Modules
+
+1. **About Page:** A page for the information of community; Focal Person, Founders, Co-Founders, etc...
+2. **Events Page:** An events page to keep the audience informed about upcoming workshops, seminars, and social gatherings. And centralized repository for photos and videos from department events.
+3. **Team Gallery:** Display of the team members in hierarchichal format, efficiently delivered via Cloudflare R2.
+4. **Access Control:** Role-based permissions within Payload CMS, allowing designated members of team to draft content for publishing.
+
+### Technologies and Skills
+
+* **Core Stack:** Next.js, Payload CMS, TypeScript, Node.js
+* **Database & Storage:** PostgreSQL (Neon DB), Cloudflare R2 (S3 Compatible Storage)
+* **Frontend:** React, Tailwind CSS
+* **System Concepts:** Headless CMS Architecture, Serverless Databases, Edge Storage, Content Modeling
+
+---
+
+### Resources & Links
+
+**Live Site:**
+* [Visit Website](https://cis-community-web.vercel.app)
+
+**GitHub Repo:**
+* [Source Code](https://github.com/Abdul-Mueed54/cis-community-web)
+
+</div>
