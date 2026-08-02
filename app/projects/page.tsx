@@ -50,7 +50,7 @@ export default function ProjectsIndex() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {myProjects.map((project) => (
           <Link href={`/projects/${project.slug}`} key={project.slug} className="group no-underline">
-            <Card className="h-full overflow-hidden border-border/50 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md">
+            <Card className="h-full overflow-hidden transition-colors shadow-sm hover:shadow-md">
               {/* Image Container */}
               <div className="relative w-full h-48 overflow-hidden">
                 <Image

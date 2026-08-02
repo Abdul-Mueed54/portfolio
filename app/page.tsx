@@ -49,24 +49,25 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Project Card 1 */}
-          <Link href="/projects/hms" className="no-underline">
-            <Card className="overflow-hidden border-border/50 h-90 shadow-sm">
+          <Link href="/projects/cis-community-web" className="group no-underline">
+            <Card className="overflow-hidden h-90 shadow-sm">
               <div className="relative w-full h-48 overflow-hidden">
                 <Image
-                  src="/HMS.png"
-                  alt="hms"
+                  src="/cis-community-web.png"
+                  alt="cis-community-web"
                   width={350}
                   height={350}
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               <CardHeader>
                 {" "}
-                <CardTitle>Hospital Management System</CardTitle>{" "}
+                <CardTitle>CIS Community Website</CardTitle>{" "}
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  A real world system made for Hospitals or Clinics.
+                  The official website of CIS Community, NEDUET.
                 </p>{" "}
                 <Button size="sm"> About Project </Button>{" "}
               </CardContent>
@@ -74,8 +75,8 @@ export default function HomePage() {
           </Link>
 
           {/* Project Card 2 */}
-          <Link href="/projects/prolog" className="no-underline">
-            <Card className="overflow-hidden border-border/50 h-90 shadow-sm">
+          <Link href="/projects/prolog" className="group no-underline">
+            <Card className=" overflow-hidden h-90 shadow-sm">
               <div className="relative w-full h-48 overflow-hidden">
                 <Image
                   src="/prolog.png"
@@ -83,6 +84,7 @@ export default function HomePage() {
                   height={400}
                   width={400}
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               <CardHeader>
@@ -110,7 +112,7 @@ export default function HomePage() {
       <section className="space-y-8">
         <h2 className="text-3xl font-bold tracking-tight">Latest Thoughts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card>
+          <Card className="border border-border/50 hover:border-primary/30">
             <CardHeader className="pb-2">
               <div className="mb-2">
                 {" "}
