@@ -1,11 +1,5 @@
 import Link from "next/link";
-import {
-  IconHome,
-  IconUser,
-  IconBriefcase,
-  IconMail,
-  IconBallpen,
-} from "@tabler/icons-react";
+import { IconHome, IconUser, IconBriefcase, IconMail, IconBallpen, } from "@tabler/icons-react";
 import { ThemeToggle } from "@/components/theme-toggle/theme-toggle";
 import Image from "next/image";
 
@@ -56,11 +50,7 @@ export function Navbar() {
       {/* CENTER: The Floating Pill */}
       <nav className="pointer-events-auto mx-auto bg-background/90 backdrop-blur-md border shadow-lg rounded-full p-1 flex items-center gap-1">
         {navItems.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="flex items-center gap-1.5 px-4 py-2 md:px-4 md:py-2.5 rounded-full hover:bg-muted text-xs md:text-sm font-medium transition-colors"
-          >
+          <Link key={item.name} href={item.href} className="flex items-center gap-1.5 px-4 py-2 md:px-4 md:py-2.5 rounded-full hover:bg-muted text-xs md:text-sm font-medium transition-colors" >
             {item.icon}
             <span className="hidden sm:inline-block">{item.name}</span>
           </Link>
