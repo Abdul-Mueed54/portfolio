@@ -1,1 +1,1 @@
-This my official portfolio: abdulmueed-portfolio.vercel.app
+This my official portfolio: abdulmueed.tech
