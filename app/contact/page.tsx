@@ -9,22 +9,35 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { IconBrandLinkedin, IconBrandGithub } from "@tabler/icons-react"
 import Link from "next/link"
 
+const COOLDOWN_MS = 60000; // 60 seconds
+
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error" | "limited">("idle")
 
-  // Check local storage on mount to see if they've already hit the limit
+  // Check local storage on mount to see if they are in a cooldown period
   useEffect(() => {
-    const submitCount = parseInt(localStorage.getItem("contact_submissions") || "0", 10)
-    if (submitCount >= 2) {
+    const lastSubmit = parseInt(localStorage.getItem("last_contact_submit") || "0", 10)
+    const timeSinceLastSubmit = Date.now() - lastSubmit
+
+    if (timeSinceLastSubmit < COOLDOWN_MS) {
       setStatus("limited")
+
+      // Automatically reset to idle when the cooldown finishes
+      const timeLeft = COOLDOWN_MS - timeSinceLastSubmit
+      const timer = setTimeout(() => {
+        setStatus("idle")
+      }, timeLeft)
+
+      return () => clearTimeout(timer)
     }
   }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const submitCount = parseInt(localStorage.getItem("contact_submissions") || "0", 10)
-    if (submitCount >= 2) {
+    // Double check the cooldown on submit
+    const lastSubmit = parseInt(localStorage.getItem("last_contact_submit") || "0", 10)
+    if (Date.now() - lastSubmit < COOLDOWN_MS) {
       setStatus("limited")
       return
     }
@@ -45,8 +58,8 @@ export default function ContactPage() {
 
       if (response.ok) {
         setStatus("success")
-        // Increment the submission count in the user's browser
-        localStorage.setItem("contact_submissions", (submitCount + 1).toString())
+        // Store the exact timestamp of this successful submission
+        localStorage.setItem("last_contact_submit", Date.now().toString())
         form.reset()
       } else {
         setStatus("error")
@@ -64,8 +77,8 @@ export default function ContactPage() {
         <div className="flex flex-col justify-center space-y-8">
           <div>
             <h1 className="text-4xl font-bold tracking-tight mb-4">Let's Connect.</h1>
-            <p className="text-muted-foreground text-lg">
-              TODO: Will Right Something Special Here
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Whether you want to discuss a potential project, ask about my work, I'm always open to new conversations. Drop a message and I'll get back to you as soon as I can!
             </p>
           </div>
 
@@ -73,7 +86,7 @@ export default function ContactPage() {
             <div className="flex items-center space-x-4">
               <IconBrandLinkedin className="w-6 h-6 text-primary" />
               <Link href="https://linkedin.com/in/-mueed" className="text-lg no-underline hover:underline">
-              LinkedIn
+                LinkedIn
               </Link>
             </div>
 
@@ -106,8 +119,10 @@ export default function ContactPage() {
               </div>
             ) : status === "limited" ? (
               <div className="flex flex-col items-center justify-center space-y-4 py-8 text-center">
-                <h3 className="text-xl font-semibold text-red-600">Bruhh :)</h3>
-                <p className="text-muted-foreground">Please Don't Tease me ;)</p>
+                <h3 className="text-xl font-semibold text-orange-500">Whoa there!</h3>
+                <p className="text-muted-foreground">
+                  Please wait a minute before sending another message. <br/> Give me a chance to read the first one! ;)
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -127,7 +142,7 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     placeholder="I'm interested in working together on..."
-                    rows={3}
+                    rows={4}
                     required
                     disabled={status === "submitting"}
                   />
